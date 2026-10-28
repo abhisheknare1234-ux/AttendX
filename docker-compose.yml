@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: attendx-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: attendx
+      POSTGRES_PASSWORD: attendx_dev_password_change_in_prod
+      POSTGRES_DB: attendx_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U attendx -d attendx_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    container_name: attendx-api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ENVIRONMENT: development
+      DEBUG: "True"
+      DATABASE_URL: postgresql+psycopg2://attendx:attendx_dev_password_change_in_prod@db:5432/attendx_db
+      SECRET_KEY: attendx_dev_secret_key_change_in_production_min_32_bytes_long!
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  web:
+    build:
+      context: apps/web
+      dockerfile: Dockerfile
+    container_name: attendx-web
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000/api/v1
+
+volumes:
+  postgres_data:

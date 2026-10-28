@@ -1,0 +1,50 @@
+from apps.api.src.core.database import Base
+from apps.api.src.models.user import User, StudentProfile, TeacherProfile, UserRole
+from apps.api.src.models.academic import (
+    Classroom,
+    ClassEntity,
+    Subject,
+    ClassEnrollment,
+    TeacherAssignment,
+)
+from apps.api.src.models.attendance import (
+    AttendanceSession,
+    DynamicQRToken,
+    AttendanceAttempt,
+    VerificationEvidence,
+    RiskDecision,
+    AttendanceRecord,
+    AttendanceCorrection,
+    AuditLog,
+    SessionStatus,
+    AttendanceStatus,
+    AttemptMethod,
+    DecisionOutcome,
+    RiskLevel,
+)
+
+__all__ = [
+    "Base",
+    "User",
+    "StudentProfile",
+    "TeacherProfile",
+    "UserRole",
+    "Classroom",
+    "ClassEntity",
+    "Subject",
+    "ClassEnrollment",
+    "TeacherAssignment",
+    "AttendanceSession",
+    "DynamicQRToken",
+    "AttendanceAttempt",
+    "VerificationEvidence",
+    "RiskDecision",
+    "AttendanceRecord",
+    "AttendanceCorrection",
+    "AuditLog",
+    "SessionStatus",
+    "AttendanceStatus",
+    "AttemptMethod",
+    "DecisionOutcome",
+    "RiskLevel",
+]

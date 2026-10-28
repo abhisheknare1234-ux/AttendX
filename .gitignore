@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.env
+.env.local
+.env.*.local
+*.db
+*.sqlite
+*.sqlite3
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Node & Next.js
+node_modules/
+.next/
+out/
+.npm
+*.tsbuildinfo
+next-env.d.ts
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# OS & Editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

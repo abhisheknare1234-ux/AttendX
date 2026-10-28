@@ -2,20 +2,10 @@ import json
 import pytest
 from fastapi.testclient import TestClient
 from apps.api.src.main import app
-from apps.api.src.core.database import Base, engine
-
-client = TestClient(app)
+from apps.api.src.models.user import StudentProfile
 
 
-@pytest.fixture(autouse=True)
-def setup_database():
-    # Fresh database tables for test suite
-    Base.metadata.drop_all(bind=engine)
-    Base.metadata.create_all(bind=engine)
-    yield
-
-
-def test_full_attendance_verification_lifecycle():
+def test_full_attendance_verification_lifecycle(client, db_session):
     # 1. Bootstrap Admin
     res = client.post("/api/v1/auth/bootstrap-admin", json={
         "email": "admin@zeal.edu.in",
@@ -110,14 +100,10 @@ def test_full_attendance_verification_lifecycle():
 
     # Find student profile ID from database/user
     # Enroll both in class
-    from apps.api.src.core.database import SessionLocal
-    from apps.api.src.models.user import StudentProfile
-    db = SessionLocal()
-    sp1 = db.query(StudentProfile).filter(StudentProfile.user_id == p1_id).first()
-    sp2 = db.query(StudentProfile).filter(StudentProfile.user_id == p2_id).first()
+    sp1 = db_session.query(StudentProfile).filter(StudentProfile.user_id == p1_id).first()
+    sp2 = db_session.query(StudentProfile).filter(StudentProfile.user_id == p2_id).first()
     sp1_id = sp1.id
     sp2_id = sp2.id
-    db.close()
 
     client.post("/api/v1/academic/enrollments", headers=admin_headers, json={"class_id": class_id, "student_id": sp1_id})
     client.post("/api/v1/academic/enrollments", headers=admin_headers, json={"class_id": class_id, "student_id": sp2_id})
@@ -257,3 +243,4 @@ def test_full_attendance_verification_lifecycle():
     stats = stats_res.json()
     assert stats["total_users"] >= 3
     assert stats["active_sessions"] == 1
+

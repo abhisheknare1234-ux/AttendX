@@ -76,3 +76,4 @@ def test_geofence_permission_denied():
     )
     assert status == "PERMISSION_DENIED"
     assert dist is None
+

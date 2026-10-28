@@ -99,3 +99,4 @@ def test_risk_engine_requires_review_due_to_gps_drift():
     assert decision == DecisionOutcome.REQUIRES_REVIEW
     assert "REQUIRES_REVIEW" in primary_reason
     assert action == "SEND_TO_REVIEW"
+

@@ -81,3 +81,4 @@ def test_liveness_detection_evaluation():
     status, score, _ = LivenessDetectionService.evaluate_liveness(False, is_required=True)
     # If not configured by default in settings, returns NOT_CONFIGURED, or FAILED if active
     assert status in ["FAILED", "NOT_CONFIGURED"]
+

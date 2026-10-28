@@ -71,3 +71,4 @@ def test_temporary_pin_generation_and_verification():
     stored_hash = hash_pin(pin, session_id)
     assert verify_pin(pin, stored_hash, session_id) is True
     assert verify_pin("999999" if pin != "999999" else "000000", stored_hash, session_id) is False
+

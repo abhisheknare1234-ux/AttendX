@@ -1,5 +1,5 @@
 import os
-from typing import List, Union
+from typing import List, Union, Any
 from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -17,6 +17,19 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     INSTITUTION_NAME: str = "ZEAL College of Engineering & Research, Pune"
 
+    @field_validator("DEBUG", mode="before")
+    @classmethod
+    def assemble_debug(cls, v: Any) -> bool:
+        if isinstance(v, bool):
+            return v
+        if isinstance(v, str):
+            v_lower = v.lower().strip()
+            if v_lower in ("true", "1", "yes", "y", "t", "dev", "development"):
+                return True
+            if v_lower in ("false", "0", "no", "n", "f", "release", "prod", "production"):
+                return False
+        return False
+
     # Security & JWT
     SECRET_KEY: str = "attendx_dev_secret_key_change_in_production_min_32_bytes_long!"
     ALGORITHM: str = "HS256"
@@ -24,6 +37,15 @@ class Settings(BaseSettings):
 
     # Database
     DATABASE_URL: str = "sqlite:///./attendx.db"
+
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def assemble_db_url(cls, v: Optional[str]) -> str:
+        if not v or v == "sqlite:///./attendx.db":
+            if os.environ.get("VERCEL"):
+                return "sqlite:////tmp/attendx.db"
+            return "sqlite:///./attendx.db"
+        return v
 
     # Dynamic Attendance Verification Controls
     QR_REFRESH_INTERVAL_SECONDS: int = 30
@@ -69,3 +91,4 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+

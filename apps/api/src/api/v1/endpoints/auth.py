@@ -157,3 +157,4 @@ def bootstrap_admin(payload: AdminBootstrapRequest, db: Session = Depends(get_db
         role=admin_user.role,
         is_active=admin_user.is_active
     )
+

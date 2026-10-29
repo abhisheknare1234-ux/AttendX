@@ -64,3 +64,4 @@ require_admin = require_role([UserRole.ADMIN])
 require_teacher = require_role([UserRole.TEACHER, UserRole.ADMIN])
 require_student = require_role([UserRole.STUDENT])
 require_any_authenticated = require_role([UserRole.ADMIN, UserRole.TEACHER, UserRole.STUDENT])
+

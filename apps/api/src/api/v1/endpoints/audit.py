@@ -37,3 +37,4 @@ def list_audit_events(
     if action:
         query = query.filter(AuditLog.action == action)
     return query.order_by(AuditLog.timestamp.desc()).offset(offset).limit(limit).all()
+

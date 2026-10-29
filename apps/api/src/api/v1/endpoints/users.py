@@ -175,3 +175,4 @@ def enroll_student_biometrics(
     )
 
     return {"message": "Biometric reference template securely registered", "student_id": profile.id}
+

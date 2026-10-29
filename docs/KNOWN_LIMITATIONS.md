@@ -23,3 +23,4 @@ Honest technical documentation of verification limitations as required by instit
 ### 1.4 Network Bandwidth in Dense Classrooms
 - **Simultaneous Request Bursts**: 80–120 students in a classroom submitting check-ins concurrently within a 3-minute window can saturate local access points.
 - **Defensibility Response**: Check-in payloads are lightweight JSON (<5 KB without raw images). Dynamic PIN fallback provides an alternative when camera or WebSocket bandwidth is strained.
+

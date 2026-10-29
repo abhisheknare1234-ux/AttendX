@@ -697,3 +697,4 @@ export default function AdminDashboard({ user }: { user: any }) {
     </div>
   );
 }
+

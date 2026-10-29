@@ -45,3 +45,4 @@ class LivenessDetectionService:
             return "PASSED", 0.98, "Live human interaction verified by challenge-response protocol"
         else:
             return "FAILED", 0.12, "Potential presentation attack detected: replay or static image characteristics"
+

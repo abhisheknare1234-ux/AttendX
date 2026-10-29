@@ -18,3 +18,4 @@ This document tracks progress against the 10 Milestones specified in the Master 
 | **M8: Reporting & Audit** | Database-backed analytics, SPPU 75% shortage alerts, formula-injection-safe CSV exports, manual correction ledger, audit trail. | **COMPLETE** | `test_full_attendance_verification_lifecycle` steps 16–18; sanitization helper active. |
 | **M9: Hardening & Docker** | Production environment checks, secret key enforcement, Docker Compose orchestration, structured logging. | **COMPLETE** | `docker-compose.yml`, `settings.validate_production_readiness()`, `DEPLOYMENT.md`. |
 | **M10: Portfolio & Pilot Readiness** | Comprehensive architecture documentation, STRIDE threat model, known limitations register, faculty demonstration guides. | **COMPLETE** | Complete `docs/` suite, student/teacher demo workflows, clean Git history. |
+

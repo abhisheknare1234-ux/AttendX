@@ -146,3 +146,4 @@ class StudentAttendanceSummary(BaseModel):
     attendance_percentage: float
     shortage_alert: bool  # True if below 75%
     subject_wise: List[dict]
+

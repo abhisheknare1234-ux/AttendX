@@ -72,3 +72,4 @@ class GeofenceService:
             return "INSIDE", rounded_dist, f"Located {rounded_dist:.1f}m from classroom center (within {effective_radius:.1f}m boundary)"
         else:
             return "OUTSIDE", rounded_dist, f"Located {rounded_dist:.1f}m from classroom center (exceeds {effective_radius:.1f}m boundary)"
+

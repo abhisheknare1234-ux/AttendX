@@ -8,3 +8,4 @@ from apps.api.src.main import app
 
 # Vercel Serverless Function entrypoint
 # The ASGI application 'app' is automatically detected and served by @vercel/python
+

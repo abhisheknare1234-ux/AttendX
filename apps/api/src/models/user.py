@@ -72,3 +72,4 @@ class TeacherProfile(Base):
     assignments = relationship("TeacherAssignment", back_populates="teacher", cascade="all, delete-orphan")
     sessions = relationship("AttendanceSession", back_populates="teacher")
     corrections = relationship("AttendanceCorrection", back_populates="teacher")
+

@@ -144,3 +144,4 @@ Returns check-ins flagged as `REQUIRES_REVIEW` (e.g. GPS multipath drift or poor
 
 ### `GET /api/v1/reports/session/{id}/export-csv`
 Exports CSV roster with spreadsheet formula injection sanitization.
+

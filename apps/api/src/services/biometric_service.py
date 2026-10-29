@@ -77,3 +77,4 @@ class BiometricVerificationService:
                 return "MISMATCH", rounded_sim, f"Biometric mismatch (similarity {rounded_sim:.2f} < threshold {threshold:.2f})"
         except Exception as e:
             return "UNAVAILABLE", None, f"Biometric verification engine failure: {str(e)}"
+

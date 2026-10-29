@@ -43,3 +43,4 @@ def log_audit_event(
         f"[AUDIT] action={action} actor={actor_id} target={target_type}:{target_id} ip={ip_address}"
     )
     return audit_entry
+

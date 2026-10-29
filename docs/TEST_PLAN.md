@@ -42,3 +42,4 @@ Total Executed Tests: **27 passed in 1.96s** (100% pass rate).
 
 ### 1.5 Full Lifecycle API Integration Tests (`apps/api/tests/test_attendance_integration.py`)
 - Covers complete 18-step workflow from administrator bootstrap, faculty and student provisioning, classroom geofencing, session opening, live dynamic QR rotation, genuine student check-in, duplicate attempt prevention, GPS drift review queue triage, teacher approval, controlled attendance correction, and formula-injection-safe CSV export.
+

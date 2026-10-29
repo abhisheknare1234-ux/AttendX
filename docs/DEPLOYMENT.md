@@ -74,3 +74,4 @@ Services launched:
 3. [x] **Secure HTTPS Cookies**: Ensure `secure=True` on session cookies behind an SSL reverse proxy (e.g. Nginx, Caddy, or AWS ALB).
 4. [x] **Firewall & Geofence Policy**: Ensure classroom anchor coordinates match physical institutional buildings.
 5. [x] **Database Automated Backups**: Schedule daily `pg_dump` snapshots to institutional cold storage.
+

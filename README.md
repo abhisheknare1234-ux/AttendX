@@ -133,3 +133,4 @@ attendx-ai/
 - **DPDPA 2023 (India) Compliance**: Raw facial photographs and videos are never retained. Only mathematical embedding vectors are preserved.
 - **Zero Background Tracking**: Geolocation is polled exclusively at the instant of student check-in with explicit user approval.
 - **CWE-1236 Defense**: CSV exports escape formula characters (`=`, `+`, `-`, `@`) to protect faculty spreadsheet software.
+

@@ -186,3 +186,4 @@ erDiagram
   - `details` (JSONB / TEXT)
   - `ip_address` (VARCHAR(45), nullable)
   - `timestamp` (TIMESTAMP UTC)
+

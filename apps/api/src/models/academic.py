@@ -94,3 +94,4 @@ class TeacherAssignment(Base):
     __table_args__ = (
         UniqueConstraint("subject_id", "teacher_id", name="uq_subject_teacher_assignment"),
     )
+

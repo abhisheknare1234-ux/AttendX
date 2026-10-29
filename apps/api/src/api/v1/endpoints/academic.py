@@ -163,3 +163,4 @@ def assign_teacher(payload: TeacherAssignmentCreate, db: Session = Depends(get_d
         subject_title=assignment.subject.title if assignment.subject else None,
         teacher_name=f"{assignment.teacher.user.first_name} {assignment.teacher.user.last_name}" if assignment.teacher and assignment.teacher.user else None
     )
+

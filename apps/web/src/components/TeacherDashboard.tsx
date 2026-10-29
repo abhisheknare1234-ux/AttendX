@@ -706,3 +706,4 @@ export default function TeacherDashboard({ user }: { user: any }) {
     </div>
   );
 }
+

@@ -118,3 +118,4 @@ After deploying on Vercel:
 3. **Faculty Check**: Launch a test session and verify dynamic QR rendering with 30s countdown.
 4. **Student Check**: Verify geolocation permission prompt and camera preview for facial evidence.
 5. **HTTPS Cookies**: Confirm browser inspect tools show `attendx_token` stored as a secure HTTP-only cookie.
+

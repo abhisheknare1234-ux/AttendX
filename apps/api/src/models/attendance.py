@@ -193,3 +193,4 @@ class AuditLog(Base):
 
     # Relationships
     actor = relationship("User", back_populates="audit_logs")
+

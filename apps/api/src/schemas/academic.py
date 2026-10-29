@@ -87,3 +87,4 @@ class TeacherAssignmentResponse(BaseModel):
 
     class Config:
         from_attributes = True
+

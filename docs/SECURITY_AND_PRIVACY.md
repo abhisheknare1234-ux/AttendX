@@ -46,3 +46,4 @@
 3. **Consent & Right to Rectification**:
    - Students can enroll and delete their biometric credentials upon graduation or institutional transfer.
    - Fallback PIN option is available for students with camera impairments or device privacy preferences.
+

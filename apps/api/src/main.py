@@ -84,3 +84,4 @@ def root():
         "documentation": "/docs",
         "health": "/api/v1/health"
     }
+

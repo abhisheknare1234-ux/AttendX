@@ -47,3 +47,4 @@ class AdminBootstrapRequest(BaseModel):
     password: str = Field(..., min_length=8)
     first_name: str = "Institutional"
     last_name: str = "Administrator"
+

@@ -75,3 +75,4 @@ AttendX AI avoids "black-box" decision-making. Every attendance check-in evaluat
 1. **ACCEPTED (Green)**: All required factors passed within institutional tolerance. Attendance officially recorded.
 2. **REQUIRES_REVIEW (Amber)**: Token passed, but secondary evidence (e.g. GPS indoor drift or marginal face match) is inconclusive. Sent to Teacher Review Queue.
 3. **REJECTED (Red)**: Security invariant violated (e.g. expired QR, duplicate attempt, student not enrolled, token replay).
+

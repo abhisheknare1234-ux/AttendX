@@ -280,7 +280,7 @@ export default function TeacherDashboard({ user }: { user: any }) {
           <div className="grid grid-cols-1 gap-4">
             {sessions.length === 0 ? (
               <div className="bg-white p-8 rounded-[14px] border border-[#E5EAF1] text-center text-xs text-[#728096]">
-                No attendance sessions created yet. Click "Launch Attendance Session" to conduct verification.
+                No attendance sessions created yet. Click &quot;Launch Attendance Session&quot; to conduct verification.
               </div>
             ) : (
               sessions.map((sess) => (

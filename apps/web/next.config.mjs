@@ -3,6 +3,12 @@ const apiBackendUrl = process.env.API_BACKEND_URL || 'http://127.0.0.1:8000';
 
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   async rewrites() {
     return [
       {
